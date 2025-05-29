@@ -1,0 +1,20 @@
+{
+  "name": "frontendpro",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "browserlist": "> 0.01%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "start:open": "parcel --open",
+    "build": " npm run clear && parcel build",
+    "clear": "rimraf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.15.2",
+    "rimraf": "^6.0.1"
+  }
+}
