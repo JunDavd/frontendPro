@@ -28,3 +28,8 @@ function carBranUnique(item:car){
 }
 
 console.log(audiA3.brand)
+
+
+function getCarUniqueBrand(item: car):string{
+    return item.brand
+}

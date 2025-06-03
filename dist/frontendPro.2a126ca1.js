@@ -16,5 +16,8 @@ function carBranUnique(item) {
     return item.brand;
 }
 console.log(audiA3.brand);
+function getCarUniqueBrand(item) {
+    return item.brand;
+}
 
 //# sourceMappingURL=frontendPro.2a126ca1.js.map
