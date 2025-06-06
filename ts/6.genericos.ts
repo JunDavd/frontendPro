@@ -13,7 +13,7 @@ interface Magazine{
 }
 
 //cada libreria puede contener solo un tipo en el array
-class Library <T>{
+class Library<T> {
     items: T[];
     public createdAT: Date;
 
@@ -24,6 +24,10 @@ class Library <T>{
 
     public add(item: T): void{
         this.items.push(item)
+    }
+
+    public list(): T[]{
+        return this.items
     }
 }
 
@@ -41,6 +45,21 @@ const sport:Magazine = {
     topic: 'sports'
 }
 
-const booksLibrary = new Library()
-booksLibrary.add(quijote)
-booksLibrary.add(sport)
+const bookLibrary = new Library<Book>()
+bookLibrary.add(quijote)
+
+const magazineLibrary = new Library<Magazine>()
+magazineLibrary.add(sport)
+
+//implementa una funcon que nos permta peticiones http y
+//definir el tipo en el momento de utilizar la funcion
+
+
+function get<T>(path: string): Promise<T>{
+    return fetch(path)
+    .then(res => res.json())
+    .then(json => json as T)
+}
+
+const books = await get<Book[]>('/books')
+books.map(i => i.author)
