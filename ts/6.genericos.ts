@@ -61,5 +61,6 @@ function get<T>(path: string): Promise<T>{
     .then(json => json as T)
 }
 
-const books = await get<Book[]>('/books')
-books.map(i => i.author)
+// const books = await get<Book[]>('/books')
+// books.map(i => i.isbn)
+
