@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*"],
+  "include": ["examples/src/**/*"],
   "compilerOptions": {
     "target": "es2021",
     "strict": true  

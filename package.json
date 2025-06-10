@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel",
     "start:open": "parcel --open",
-    "build": " npm run clear && parcel build",
+    "build": " npm run clear && parcel build --no-source-maps ",
     "clear": "rimraf dist"
   },
   "keywords": [],
@@ -15,6 +15,11 @@
   "description": "",
   "devDependencies": {
     "parcel": "^2.15.2",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "sharp": "^0.33.5"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
+    "tailwindcss": "^4.1.8"
   }
 }

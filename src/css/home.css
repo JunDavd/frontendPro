@@ -1,0 +1,9 @@
+@import './config.css';
+
+section#hero {
+    background-image: url('../img/header.jpg?as=webp&quality=75&width=1920');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7);
+}

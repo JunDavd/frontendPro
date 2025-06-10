@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+    --color-gold: rgb(202, 172, 0);
+    --font-serif: 'Poltwaski Nowy', serif;
+    --font-sans: 'Public Sans', sans-serif;
+}
