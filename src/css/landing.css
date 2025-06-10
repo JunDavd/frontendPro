@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.full-hero {
+    background: url('/img/header.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.full-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+h1 {
+    color: rgb(202, 172, 0);
+    font-size: 3rem;
+    text-align: center;
+    z-index: 1;
+    font-family: 'Poltawski Nowy', serif;
+}
+h2 {
+    color: rgb(224, 216, 165);
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1;
+    font-family: 'Public Sans', sans-serif;
+    margin-top: 1rem;
+}
+p {
+    color: rgb(224, 216, 165);
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 1;
+    font-family: 'Public Sans', sans-serif;
+    margin-top: 1rem;
+}
