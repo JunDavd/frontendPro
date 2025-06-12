@@ -14,12 +14,14 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/luxon": "^3.6.2",
     "parcel": "^2.15.2",
     "rimraf": "^6.0.1",
     "sharp": "^0.33.5"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.8",
+    "luxon": "^3.6.1",
     "tailwindcss": "^4.1.8"
   }
 }

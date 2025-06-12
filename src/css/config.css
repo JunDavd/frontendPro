@@ -1,7 +1,26 @@
 @import "tailwindcss";
 
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
 @theme {
     --color-gold: rgb(202, 172, 0);
     --font-serif: 'Poltwaski Nowy', serif;
     --font-sans: 'Public Sans', sans-serif;
+    --font-title: 'Poltwaski Nowy', serif;
+    --font-common: 'Public Sans', sans-serif;
+}
+
+.page-title{
+  @apply text-4xl  text-center uppercase underline text-gold font-title tracking-[0.25rem]      
+}
+
+.counter-item{
+  @apply inline-block flex-1 uppercase text-center font-common
+}
+
+.counter-item-number{
+  @apply block text-6xl mb-4 text-gold
 }
