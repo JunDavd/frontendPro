@@ -1,4 +1,4 @@
-import { DateTime } from "luxon"
+import { DateTime,DurationObjectUnits } from "luxon"
 
 //Requisitos:
 //definir la fecha proxima
@@ -13,12 +13,12 @@ interface HtmlElements {
     seconds: HTMLElement | null;
 }
 
-function bootstrap(){
-    function updateTime(){
-        const dateNow = DateTime.now().setZone("America/New_York")
-        const dateFuture = DateTime.fromISO('2025-12-28T12:00')
-        const Diff = dateFuture.diff(dateNow,['days','hours','minutes','seconds'])
-        console.log(Diff.toObject())
+function bootstrap(): void{
+    function updateTime(): void{
+        const dateNow: DateTime = DateTime.now().setZone("America/New_York")
+        const dateFuture: DateTime = DateTime.fromISO('2025-12-28T12:00')
+        const diff: DurationObjectUnits = dateFuture.diff(dateNow,['days','hours','minutes','seconds']).toObject()
+        type validKeys = typeof diff
         //seleccionar nodos
         const elements: HtmlElements = {
             days: document.getElementById('days'),
@@ -33,9 +33,8 @@ function bootstrap(){
 
         //iterar objeto
         Object.entries(elements).forEach(([key, value]) =>{
-            const diff = Diff.toObject()
-            value.textContent = Math.floor(diff[key]).toString()
-            console.log(key)
+            const diffValue = diff[key as keyof validKeys] || 0
+            value.textContent = Math.floor(diffValue).toString()
         })
         
     //    if(days) days.textContent = Math.floor(Diff.days).toString()
@@ -43,7 +42,6 @@ function bootstrap(){
     }
     updateTime()
     setInterval(updateTime,1000)
-    
     
 }
 bootstrap()
