@@ -24,3 +24,8 @@
 .counter-item-number{
   @apply block text-6xl mb-4 text-gold
 }
+
+.notification-style{
+  @apply block text-center bg-gold text-lg mt-6
+  
+}

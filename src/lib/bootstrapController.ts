@@ -30,16 +30,12 @@ export function bootstrap(container: HTMLElement | null): void{
             minutes: document.getElementById('minutes'),
             seconds: document.getElementById('seconds'),
         }
-        // const days = document.getElementById('days')
-        // const hours = document.getElementById('hours')
-        // const minutes = document.getElementById('minutes')
-        // const seconds = document.getElementById('seconds')
-        
         //iterar objeto
+
         try {
             Object.entries(elements).forEach(([key, value]) =>{
                 if(!value){
-                    throw new Error('Missing html element')
+                    throw new Error(`Missing htmlelement id: ${key}, in index.html`)
                 }
                  const diffValue = diff[key as keyof validKeys] || 0
                 value.textContent = Math.floor(diffValue).toString()
@@ -47,21 +43,14 @@ export function bootstrap(container: HTMLElement | null): void{
         } catch (error) {
             console.log(error)
              Object.entries(elements).forEach(([key, value]) => {
-                if (value) {
-                    value.textContent = '0'
-                }
-            })
-
-            if(intervalTimer){
-                clearInterval(intervalTimer)
-            }
-            
+                if(value) value.textContent = '0'})
+                    
+            if(intervalTimer) clearInterval(intervalTimer)
+              
             const event = new CustomEvent('element-edition-error')
-            container.dispatchEvent(event)
+            if(container) container.dispatchEvent(event)
         }
 
-        
-    //    if(days) days.textContent = Math.floor(Diff.days).toString()
 
     }
     updateTime()

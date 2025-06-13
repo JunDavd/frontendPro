@@ -1,5 +1,4 @@
-import { bootstrap } from "./bootstrap"
-import { HtmlElements } from "./bootstrap"
+import { bootstrap } from "./bootstrapController"
 
 document.addEventListener('DOMContentLoaded',() =>{
     const container = document.getElementById('about-date')
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         }
         const notification = document.createElement('p')
             notification.innerHTML = 'La proxima edicíon se anunciara pronto'
-            notification.classList.add('block','text-center','bg-gold','text-lg','error-notification')
+            notification.classList.add('notification-style','error-notification')
             container.appendChild(notification)
             const counterContainer = document.querySelectorAll('#counter li')
             counterContainer.forEach((liElement) => {
