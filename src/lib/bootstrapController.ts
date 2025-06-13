@@ -44,13 +44,12 @@ export function bootstrap(container: HTMLElement | null): void{
             console.log(error)
              Object.entries(elements).forEach(([key, value]) => {
                 if(value) value.textContent = '0'})
-                    
+
             if(intervalTimer) clearInterval(intervalTimer)
               
             const event = new CustomEvent('element-edition-error')
             if(container) container.dispatchEvent(event)
         }
-
 
     }
     updateTime()

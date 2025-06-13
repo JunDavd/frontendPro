@@ -7,6 +7,7 @@
 
 @theme {
     --color-gold: rgb(202, 172, 0);
+    --color-bg: #f0f0f0
     --font-serif: 'Poltwaski Nowy', serif;
     --font-sans: 'Public Sans', sans-serif;
     --font-title: 'Poltwaski Nowy', serif;

@@ -1,4 +1,5 @@
 @import './config.css';
+@import './_header.css';
 
 section#hero {
     background-image: url('../img/header.jpg?as=webp&quality=75&width=1920');
