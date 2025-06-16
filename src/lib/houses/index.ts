@@ -1,4 +1,5 @@
 import { Character, Houses } from "./characterInterface";
+import { createCharacterImg } from "./charactersView";
 import { getCharacters } from "./hpApi";
 
 //consultar los personajes de cada una de las casas
@@ -8,29 +9,19 @@ import { getCharacters } from "./hpApi";
 
 export async function bootstrap(){
     //TODO: OBTENER LOS PERSONAJES PARA CADA UNA DE LAS CASA
-    // const gryffindor:Character[] = await getCharacters('gryffindor')
-    // const hufflepuff:Character[]  = await getCharacters('hufflepuff')
-    // const ravenclaw:Character[] = await getCharacters('ravenclaw')
-    // const slytherin:Character[] = await getCharacters('slytherin')
-    // let characters;
+   
     for (const house in Houses){
         const characters = await getCharacters(house.toLowerCase())
-        
-        characters.forEach((character) => {
+  
+        characters.forEach((character:Character) => {
             const container = document.getElementById(`${character.house.toLocaleLowerCase()}`)
-            const imgElement = document.createElement('div')
-            imgElement.innerHTML = 
-            console.log(character.name, character.house.toLocaleLowerCase())
+            if(character.image){
+                const imgElement = document.createElement('div')
+                imgElement.classList.add('house-character','items-center')
+                imgElement.innerHTML = createCharacterImg(character)
+                if(container) container.appendChild(imgElement)
+            }
         })
     }
-    // console.log(characters)
-    // characters?.forEach((character) =>{
-    //     console.log(character.name)
-    // })
-    // characters?.map((character) =>{
-    //     character.
-    // })
-    //TODO 2: RENDERIZAR CONTENIDO 
-
 }
 bootstrap()

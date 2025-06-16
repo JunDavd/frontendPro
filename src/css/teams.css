@@ -8,3 +8,7 @@
 .house-character{
     @apply flex gap-1 justify-center overflow-hidden w-[3rem] h-[3rem] rounded-full
 }
+
+.character-container{
+    @apply flex flex-row gap-1
+}
