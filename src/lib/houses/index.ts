@@ -13,7 +13,7 @@ export async function bootstrap(){
     for (const house in Houses){
         const characters = await getCharacters(house.toLowerCase())
   
-        characters.forEach((character:Character) => {
+        characters.slice(0,8).forEach((character:Character) => {
             const container = document.getElementById(`${character.house.toLocaleLowerCase()}`)
             if(character.image){
                 const imgElement = document.createElement('div')
