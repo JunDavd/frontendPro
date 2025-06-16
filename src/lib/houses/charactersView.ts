@@ -1,10 +1,9 @@
 import { Character } from "./characterInterface"
 
-export function createCharacterImg(character: Character): string{
-    const viewCharacter = 
-    `
-        <img class="w-full" src="${character.image}" alt="${character.name}">
-    `
+export function createCharacterImg(character: Character): HTMLImageElement{
+    const viewCharacter = document.createElement('img')
+    viewCharacter.src = character.image
+    viewCharacter.alt = character.name
     return viewCharacter
 }
 

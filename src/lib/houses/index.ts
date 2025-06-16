@@ -1,5 +1,5 @@
 import { Character, Houses } from "./characterInterface";
-import { createCharacterImg } from "./charactersView";
+import { renderCharacterImg } from "./characterRender";
 import { getCharacters } from "./hpApi";
 
 //consultar los personajes de cada una de las casas
@@ -13,14 +13,8 @@ export async function bootstrap(){
     for (const house in Houses){
         const characters = await getCharacters(house.toLowerCase())
   
-        characters.slice(0,8).forEach((character:Character) => {
-            const container = document.getElementById(`${character.house.toLocaleLowerCase()}`)
-            if(character.image){
-                const imgElement = document.createElement('div')
-                imgElement.classList.add('house-character','items-center')
-                imgElement.innerHTML = createCharacterImg(character)
-                if(container) container.appendChild(imgElement)
-            }
+        characters.filter(character => character.image).slice(0,8).forEach((character:Character) => {
+            renderCharacterImg(character)
         })
     }
 }
