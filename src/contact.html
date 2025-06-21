@@ -22,7 +22,7 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/contact.css">
 
 </head>
 <body>
@@ -53,6 +53,31 @@
 
     <section id="hero" class="py-[220px]">
         <h1 class="page-title">Quidditch Champions XVIII</h1>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-8 container">
+        <h2 class="uppercase font-title text-center text-lg tracking-[0.5rem] mb-6">
+            Contacta con nosotros
+        </h2>
+
+        <p>
+            Si tienes alguna duda o sugerencia, no dudes en ponerte en contacto con nosotros.
+        </p>
+        <div class="form-container">
+            <form id="contactForm" method="post" novalidate>
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Nombre" required>
+                <span class="name-error-message error"></span>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <span class="email-error-message error"></span>
+                <label for="message">Mensaje</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+                <span class="message-error-message error"></span>
+                <button type="submit" value="Enviar">Enviar</button>
+            </form>
+        </div>
     </section>
 
     <footer class="flex justify-center items-center flex-col">

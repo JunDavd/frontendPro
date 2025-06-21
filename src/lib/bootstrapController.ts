@@ -21,7 +21,7 @@ export function bootstrap(container: HTMLElement | null): void{
         const diff: DurationObjectUnits = dateFuture.diff(dateNow,['days','hours','minutes','seconds']).toObject()
         type validKeys = typeof diff
         //seleccionar nodos
-        if(dateFuture >= dateNow){
+        if(dateFuture <= dateNow){
             dateFuture = dateFuture.plus({year: 1})
         }
         const elements: HtmlElements = {
@@ -35,7 +35,7 @@ export function bootstrap(container: HTMLElement | null): void{
         try {
             Object.entries(elements).forEach(([key, value]) =>{
                 if(!value){
-                    throw new Error(`Missing htmlelement id: ${key}, in index.html`)
+                    throw new Error(`Missing htmlelement id:"${key}", in index.html`)
                 }
                  const diffValue = diff[key as keyof validKeys] || 0
                 value.textContent = Math.floor(diffValue).toString()
